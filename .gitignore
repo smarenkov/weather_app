@@ -1,15 +1,23 @@
+# IDE files
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+.idea/
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# Gradle files
+.gradle
+/.gradle/
 local.properties
+
+# NDK/Native build files
+.externalNativeBuild
+.cxx/
+
+# Android build files
+/build/
+/captures/
+/outputs/
+/navigation/
+navigation_json/
+
+# Ignore keystore files (if applicable, adjust the filename as needed)
+*.keystore

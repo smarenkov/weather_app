@@ -12,7 +12,9 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.location.LocationServices
+import com.smarenkov.weather.R
 import com.smarenkov.weather.data.CurrentLocation
 import com.smarenkov.weather.databinding.FragmentHomeBinding
 import com.smarenkov.weather.storage.AppSharedPreferences
@@ -123,6 +125,7 @@ class HomeFragment : Fragment() {
             setItems(options) { _, which ->
                 when (which) {
                     0 -> proceedWithCurrentLocation()
+                    1 -> openManualLocationSearch()
                 }
             }
             show()
@@ -141,5 +144,9 @@ class HomeFragment : Fragment() {
             weatherDataRecyclerView.visibility = View.VISIBLE
             swipeRefreshLayout.isRefreshing = false
         }
+    }
+
+    private fun openManualLocationSearch() {
+        findNavController().navigate(R.id.action_homeFragment_to_locationFragment)
     }
 }
